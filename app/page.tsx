@@ -1,4 +1,7 @@
-﻿const offerings = [
+﻿
+import Image from "next/image";
+
+const offerings = [
   {
     number: "01",
     title: "Herbal Products",
@@ -22,19 +25,26 @@
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#faf8f1] text-[#243b2b]">
-      <header className="border-b border-[#e6e4d9] bg-[#faf8f1]">
+      {/* Header */}
+      <header className="relative z-20 border-b border-[#e6e4d9] bg-[#faf8f1]">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
           <a href="#" className="text-xl font-bold tracking-tight">
             KHAZIMIYYA
-            <span className="block text-[10px] font-medium tracking-[0.3em] text-[#78856c]">
+            <span className="mt-1 block text-[10px] font-medium tracking-[0.3em] text-[#78856c]">
               HERBAL MEDICINE
             </span>
           </a>
 
-          <nav className="hidden items-center gap-8 text-sm md:flex">
-            <a href="#about" className="transition hover:text-[#8b7042]">About</a>
-            <a href="#offerings" className="transition hover:text-[#8b7042]">Our Products</a>
-            <a href="#contact" className="transition hover:text-[#8b7042]">Contact</a>
+          <nav className="hidden items-center gap-9 text-sm md:flex">
+            <a href="#about" className="transition hover:text-[#a18a5c]">
+              About
+            </a>
+            <a href="#offerings" className="transition hover:text-[#a18a5c]">
+              Our Products
+            </a>
+            <a href="#contact" className="transition hover:text-[#a18a5c]">
+              Contact
+            </a>
           </nav>
 
           <a
@@ -46,61 +56,71 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative overflow-hidden bg-[#203b2b] text-[#faf8f1]">
-        <div className="absolute -right-20 -top-24 h-80 w-80 rounded-full border border-white/10" />
-        <div className="absolute -right-8 -top-12 h-56 w-56 rounded-full border border-white/10" />
+      {/* Hero */}
+      <section className="relative isolate flex min-h-[620px] items-center overflow-hidden bg-[#203b2b] text-white">
+        <Image
+          src="/images/Rustic%20Herbal%20Remedies%20Still%20Life.png"
+          alt="A natural arrangement of herbal ingredients and botanical remedies"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
 
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-2 md:items-center md:py-32 lg:px-10">
-          <div>
-            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.35em] text-[#c8b98d]">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#172d20]/95 via-[#203b2b]/80 to-[#203b2b]/35" />
+
+        <div className="relative mx-auto w-full max-w-7xl px-6 py-28 lg:px-10">
+          <div className="max-w-2xl">
+            <p className="mb-7 text-xs font-semibold uppercase tracking-[0.35em] text-[#d7c69b]">
               Welcome to Khazimiyya
             </p>
 
-            <h1 className="max-w-2xl text-5xl font-semibold leading-[1.12] tracking-tight md:text-6xl">
+            <h1 className="text-5xl font-semibold leading-[1.12] tracking-tight sm:text-6xl md:text-7xl">
               A thoughtful approach to herbal products.
             </h1>
 
-            <p className="mt-7 max-w-xl text-base leading-8 text-[#d9e0d6]">
-              Discover Khazimiyya Herbal Medicine, learn about our products
-              and contact our team for product information and enquiries.
+            <p className="mt-7 max-w-xl text-base leading-8 text-[#e2e7df] md:text-lg">
+              Discover Khazimiyya Herbal Medicine, explore our product range
+              and get helpful information directly from our team.
             </p>
 
-            <div className="mt-9 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#offerings"
                 className="rounded-full bg-[#d7c69b] px-7 py-4 text-sm font-semibold text-[#203b2b] transition hover:bg-[#e7d9b6]"
               >
                 Explore our products
               </a>
+
               <a
                 href="#about"
-                className="rounded-full border border-white/40 px-7 py-4 text-sm font-semibold text-white transition hover:bg-white/10"
+                className="rounded-full border border-white/50 px-7 py-4 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Discover our story
               </a>
             </div>
           </div>
+        </div>
 
-          <div className="flex min-h-[300px] items-center justify-center rounded-[2rem] border border-white/15 bg-white/[0.05] p-10">
-            <div className="max-w-sm text-center">
-              <span className="text-7xl" aria-hidden="true">🌿</span>
-              <p className="mt-6 text-2xl font-medium">Rooted in nature</p>
-              <p className="mt-3 text-sm leading-7 text-[#d9e0d6]">
-                A welcoming place to discover our herbal product range and
-                learn more about Khazimiyya.
-              </p>
-            </div>
-          </div>
+        <div className="absolute bottom-0 right-0 hidden border-l border-t border-white/20 bg-[#203b2b]/60 px-10 py-7 backdrop-blur-sm md:block">
+          <p className="text-xs uppercase tracking-[0.25em] text-[#d7c69b]">
+            Khazimiyya
+          </p>
+          <p className="mt-2 text-sm text-white/80">
+            Rooted in nature
+          </p>
         </div>
       </section>
 
+      {/* About */}
       <section id="about" className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
-        <div className="grid gap-10 md:grid-cols-2 md:items-center">
+        <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#8b7042]">
               About Khazimiyya
             </p>
-            <h2 className="mt-5 max-w-lg text-3xl font-semibold leading-tight md:text-4xl">
+
+            <h2 className="mt-5 max-w-lg text-3xl font-semibold leading-tight tracking-tight md:text-4xl">
               Bringing product information closer to our customers.
             </h2>
           </div>
@@ -109,22 +129,33 @@ export default function Home() {
             <p className="text-base leading-8 text-[#687267]">
               Khazimiyya Herbal Medicine is committed to helping customers
               learn about its herbal products and access useful product
-              information. This website is being developed as a convenient
-              place to explore the business and make enquiries.
+              information. Our website provides a convenient place to explore
+              the business, discover available products and make enquiries.
             </p>
+
+            <a
+              href="#contact"
+              className="mt-7 inline-flex items-center gap-3 text-sm font-semibold text-[#294633] transition hover:text-[#8b7042]"
+            >
+              Get in touch
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
         </div>
       </section>
 
+      {/* Offerings */}
       <section id="offerings" className="bg-[#f0eee4] px-6 py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#8b7042]">
               Explore Khazimiyya
             </p>
-            <h2 className="mt-5 text-3xl font-semibold md:text-4xl">
+
+            <h2 className="mt-5 text-3xl font-semibold tracking-tight md:text-4xl">
               How we can help
             </h2>
+
             <p className="mt-4 leading-7 text-[#687267]">
               Find out more about our products and how to get in touch with us.
             </p>
@@ -134,12 +165,18 @@ export default function Home() {
             {offerings.map((item) => (
               <article
                 key={item.number}
-                className="rounded-2xl border border-[#e1dfd2] bg-[#faf8f1] p-8 transition hover:-translate-y-1 hover:shadow-lg"
+                className="group rounded-2xl border border-[#e1dfd2] bg-[#faf8f1] p-8 transition duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                <p className="text-sm font-semibold tracking-widest text-[#a18a5c]">
+                <p className="text-sm font-semibold tracking-[0.2em] text-[#a18a5c]">
                   {item.number}
                 </p>
-                <h3 className="mt-8 text-xl font-semibold">{item.title}</h3>
+
+                <div className="mt-8 h-px w-12 bg-[#c6b58d] transition-all duration-300 group-hover:w-20" />
+
+                <h3 className="mt-7 text-xl font-semibold">
+                  {item.title}
+                </h3>
+
                 <p className="mt-4 text-sm leading-7 text-[#687267]">
                   {item.description}
                 </p>
@@ -149,28 +186,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Contact */}
       <section id="contact" className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
-        <div className="rounded-[2rem] bg-[#294633] px-8 py-16 text-center text-white md:px-16">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#d7c69b]">
-            Get in touch
-          </p>
-          <h2 className="mx-auto mt-5 max-w-2xl text-3xl font-semibold md:text-4xl">
-            Have a question about our products?
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl leading-7 text-[#d9e0d6]">
-            Contact Khazimiyya for product information, availability and
-            general enquiries.
-          </p>
-          <p className="mt-8 text-sm text-[#d7c69b]">
-            Contact details will be added after confirmation with the business owner.
-          </p>
+        <div className="relative overflow-hidden rounded-[2rem] bg-[#294633] px-8 py-20 text-center text-white md:px-16">
+          <div className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full border border-white/10" />
+          <div className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full border border-white/10" />
+
+          <div className="relative mx-auto max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#d7c69b]">
+              Get in touch
+            </p>
+
+            <h2 className="mt-5 text-3xl font-semibold leading-tight md:text-4xl">
+              Have a question about our products?
+            </h2>
+
+            <p className="mt-5 leading-7 text-[#d9e0d6]">
+              Contact Khazimiyya for product information, availability and
+              general enquiries.
+            </p>
+
+            <p className="mt-8 text-sm text-[#d7c69b]">
+              Contact details will be added after confirmation with the
+              business owner.
+            </p>
+          </div>
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="border-t border-[#e6e4d9] px-6 py-8 lg:px-10">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-3 text-sm text-[#687267] md:flex-row">
           <p>© 2026 Khazimiyya Herbal Medicine.</p>
-          <p>Product information is not a substitute for professional medical advice.</p>
+          <p>
+            Product information is not a substitute for professional medical
+            advice.
+          </p>
         </div>
       </footer>
     </main>
