@@ -1,5 +1,6 @@
 ﻿
 import Image from "next/image";
+import Header from "./components/Header";
 
 const offerings = [
   {
@@ -25,36 +26,8 @@ const offerings = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#faf8f1] text-[#243b2b]">
-      {/* Header */}
-      <header className="relative z-20 border-b border-[#e6e4d9] bg-[#faf8f1]">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
-          <a href="#" className="text-xl font-bold tracking-tight">
-            KHAZIMIYYA
-            <span className="mt-1 block text-[10px] font-medium tracking-[0.3em] text-[#78856c]">
-              HERBAL MEDICINE
-            </span>
-          </a>
-
-          <nav className="hidden items-center gap-9 text-sm md:flex">
-            <a href="#about" className="transition hover:text-[#a18a5c]">
-              About
-            </a>
-            <a href="#offerings" className="transition hover:text-[#a18a5c]">
-              Our Products
-            </a>
-            <a href="#contact" className="transition hover:text-[#a18a5c]">
-              Contact
-            </a>
-          </nav>
-
-          <a
-            href="#contact"
-            className="rounded-full bg-[#294633] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#3c6048]"
-          >
-            Make an enquiry
-          </a>
-        </div>
-      </header>
+ {/* Header */}
+<Header />
 
       {/* Hero */}
       <section className="relative isolate flex min-h-[620px] items-center overflow-hidden bg-[#203b2b] text-white">
