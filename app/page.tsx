@@ -1,27 +1,8 @@
 ﻿
 import Image from "next/image";
 import Header from "./components/Header";
+import ProductCatalog from "./components/ProductCatalog";
 
-const offerings = [
-  {
-    number: "01",
-    title: "Herbal Products",
-    description:
-      "Explore the range of herbal products available from Khazimiyya.",
-  },
-  {
-    number: "02",
-    title: "Product Information",
-    description:
-      "Get clear information about our products, ingredients and availability.",
-  },
-  {
-    number: "03",
-    title: "Customer Enquiries",
-    description:
-      "Speak with our team about products, orders and general enquiries.",
-  },
-];
 
 export default function Home() {
   return (
@@ -117,47 +98,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Offerings */}
-      <section id="offerings" className="bg-[#f0eee4] px-6 py-24 lg:px-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#8b7042]">
-              Explore Khazimiyya
-            </p>
+      {/* Product Catalogue */}
+<ProductCatalog />
 
-            <h2 className="mt-5 text-3xl font-semibold tracking-tight md:text-4xl">
-              How we can help
-            </h2>
-
-            <p className="mt-4 leading-7 text-[#687267]">
-              Find out more about our products and how to get in touch with us.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {offerings.map((item) => (
-              <article
-                key={item.number}
-                className="group rounded-2xl border border-[#e1dfd2] bg-[#faf8f1] p-8 transition duration-300 hover:-translate-y-1 hover:shadow-xl"
-              >
-                <p className="text-sm font-semibold tracking-[0.2em] text-[#a18a5c]">
-                  {item.number}
-                </p>
-
-                <div className="mt-8 h-px w-12 bg-[#c6b58d] transition-all duration-300 group-hover:w-20" />
-
-                <h3 className="mt-7 text-xl font-semibold">
-                  {item.title}
-                </h3>
-
-                <p className="mt-4 text-sm leading-7 text-[#687267]">
-                  {item.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Contact */}
       <section id="contact" className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
